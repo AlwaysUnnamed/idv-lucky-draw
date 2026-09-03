@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第五人格 · 幸运抽奖</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎲 第五人格幸运抽奖</h1>
+
+        <!-- 标签页切换 -->
+        <div class="tabs">
+            <button class="tab active" data-type="survivor">🧍 求生者（4人）</button>
+            <button class="tab" data-type="hunter">🔪 监管者（1人）</button>
+        </div>
+
+        <!-- 一键开局：4求生者 + 1监管者 -->
+        <div class="quick-box">
+            <button class="btn-all" id="drawAllBtn">⚡ 一键开局（4求生 + 1监管）</button>
+            <div class="all-result" id="allResult" style="display:none;"></div>
+        </div>
+
+        <!-- 求生者面板 -->
+        <div class="panel active" id="panel-survivor">
+            <div class="players" id="players-survivor"></div>
+            <div class="lowprob">
+                <span class="lowprob-label">⬇️ 降低概率角色(0-3个):</span>
+                <div class="lowprob-selects" id="lowprob-survivor"></div>
+            </div>
+            <div class="grid" id="grid-survivor"></div>
+            <div class="controls">
+                <button class="btn-start" id="start-survivor">🎯 开始</button>
+                <button class="btn-end" id="end-survivor" disabled>🛑 结束</button>
+            </div>
+            <div class="result" id="result-survivor">等待抽奖...</div>
+        </div>
+
+        <!-- 监管者面板 -->
+        <div class="panel" id="panel-hunter">
+            <div class="players" id="players-hunter"></div>
+            <div class="lowprob">
+                <span class="lowprob-label">⬇️ 降低概率角色(0-3个):</span>
+                <div class="lowprob-selects" id="lowprob-hunter"></div>
+            </div>
+            <div class="grid" id="grid-hunter"></div>
+            <div class="controls">
+                <button class="btn-start" id="start-hunter">🎯 开始</button>
+                <button class="btn-end" id="end-hunter" disabled>🛑 结束</button>
+            </div>
+            <div class="result" id="result-hunter">等待抽奖...</div>
+        </div>
+
+        <!-- 历史记录（两种模式共用） -->
+        <div class="history-box">
+            <div class="history-head">
+                <span>📋 抽奖记录</span>
+                <button class="btn-clear" id="clearHistoryBtn">🗑️ 清空记录</button>
+            </div>
+            <div class="history" id="history"></div>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>

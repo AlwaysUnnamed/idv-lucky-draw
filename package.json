@@ -1,0 +1,19 @@
+{
+  "name": "idv-lucky-draw",
+  "version": "1.0.0",
+  "description": "第五人格幸运抽奖网站：抽取4名求生者及天赋 + 1名监管者及天赋",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
+    "mongoose": "^7.0.0"
+  }
+
+}

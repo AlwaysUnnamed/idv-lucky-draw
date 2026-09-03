@@ -1,0 +1,129 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: "Microsoft YaHei", Arial, sans-serif;
+    background: #1e2430;
+    color: #eee;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 { text-align: center; margin-bottom: 18px; letter-spacing: 2px; }
+
+/* 标签页 */
+.tabs { display: flex; gap: 10px; margin-bottom: 15px; }
+.tab {
+    flex: 1; padding: 10px; font-size: 16px; font-weight: bold;
+    background: #2c3444; color: #aaa; border: none;
+    border-radius: 8px; cursor: pointer;
+}
+.tab.active { background: #4a90d9; color: #fff; }
+
+/* 一键开局 */
+.quick-box { margin-bottom: 15px; text-align: center; }
+.btn-all {
+    padding: 12px 30px; font-size: 16px; font-weight: bold;
+    background: #e67e22; color: #fff; border: none;
+    border-radius: 8px; cursor: pointer;
+}
+.btn-all:hover { background: #d35400; }
+.all-result {
+    margin-top: 12px; background: #2c3444; border-radius: 8px;
+    padding: 12px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+}
+.all-card {
+    background: #223047; border-radius: 8px; padding: 10px 14px;
+    min-width: 130px; text-align: center;
+}
+.all-card.hunter-card { background: #5a2230; border: 2px solid #e74c3c; }
+.all-card .role { font-size: 12px; color: #999; margin-bottom: 4px; }
+.all-card .char { font-size: 18px; font-weight: bold; color: #fff; margin-bottom: 4px; }
+.all-card .talent { font-size: 12px; color: #f1c40f; }
+
+/* 面板 */
+.panel { display: none; }
+.panel.active { display: block; }
+
+/* 玩家名输入 */
+.players {
+    display: flex; gap: 10px; justify-content: center;
+    background: #2c3444; border-radius: 8px; padding: 10px; margin-bottom: 10px;
+    flex-wrap: wrap; align-items: center;
+}
+.player-item { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.player-item.current input { border: 2px solid #e74c3c; }
+.player-item input {
+    width: 100px; padding: 6px; text-align: center; font-size: 14px;
+    border: 2px solid transparent; border-radius: 6px; background: #1a2029; color: #eee;
+}
+
+/* 低概率设置 */
+.lowprob {
+    display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+    background: #3a3220; border-radius: 8px; padding: 10px; margin-bottom: 10px;
+}
+.lowprob-label { color: #f39c12; font-weight: bold; font-size: 14px; }
+.lowprob-selects { display: flex; gap: 8px; flex-wrap: wrap; }
+.lowprob-selects select {
+    padding: 6px; border-radius: 6px; background: #1a2029;
+    color: #eee; border: 1px solid #5a4a20; font-size: 13px;
+}
+
+/* 角色网格 */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 4px; margin-bottom: 12px;
+}
+.cell {
+    background: #2c3444; border: 1px solid #3d4b60; border-radius: 4px;
+    text-align: center; padding: 10px 2px; font-size: 13px;
+    transition: background 0.05s;
+}
+.cell.rolling { background: #ff4d4d; color: #fff; font-weight: bold; }
+.cell.winner {
+    background: #e74c3c; color: #fff; font-weight: bold;
+    transform: scale(1.08); box-shadow: 0 0 10px #e74c3c;
+}
+.cell.low { color: #f39c12; }
+
+/* 控制按钮 */
+.controls { display: flex; gap: 20px; justify-content: center; margin-bottom: 12px; }
+.btn-start, .btn-end {
+    padding: 12px 40px; font-size: 18px; font-weight: bold;
+    border: none; border-radius: 8px; cursor: pointer; color: #fff;
+}
+.btn-start { background: #4CAF50; }
+.btn-end { background: #f44336; }
+.btn-start:disabled, .btn-end:disabled { background: #555; cursor: not-allowed; }
+
+/* 结果条 */
+.result {
+    text-align: center; font-size: 20px; font-weight: bold;
+    padding: 14px; border-radius: 8px; margin-bottom: 15px;
+    background: #3a3a20; color: #ccc;
+}
+.result.done { background: #1e4620; color: #7dff7d; }
+
+/* 历史记录 */
+.history-box {
+    background: #262d3a; border-radius: 8px; padding: 12px;
+    max-height: 220px; overflow-y: auto;
+}
+.history-head {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 8px; font-weight: bold;
+}
+.btn-clear {
+    background: #666; color: #fff; border: none; border-radius: 6px;
+    padding: 6px 12px; cursor: pointer;
+}
+.history div { padding: 4px 0; font-size: 14px; border-bottom: 1px dashed #3d4b60; }
+.history .tag-survivor { color: #4a90d9; }
+.history .tag-hunter { color: #e74c3c; }
+.history .low-mark { color: #f39c12; }
