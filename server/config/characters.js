@@ -33,7 +33,7 @@ const hunters = [
 const hunterWeights = [
   ...Array(10).fill(1),
   ...Array(14).fill(3),
-  ...Array(11).fill(2)
+  ...Array(12).fill(2)
 ];
 
 // ── 天赋选项 ──
